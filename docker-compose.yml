@@ -1,0 +1,12 @@
+services:
+  recap:
+    build: .
+    container_name: funkyboy-build
+    restart: unless-stopped
+    env_file: .env
+    networks:
+      - funkyboy-llm-net
+
+networks:
+  funkyboy-llm-net:
+    external: true
